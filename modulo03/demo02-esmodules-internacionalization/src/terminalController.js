@@ -24,11 +24,19 @@ export default class TerminalController {
         const data = database.map(item => new Person(item).formatted(language));
         const table = chalkTable(this.getTableOptions, data);
         this.print = console.draft(table);
+
+        this.data = data;
+    }
+
+    updateTable(item) {
+        this.data.push(item);
+        this.print(chalkTable(this.getTableOptions(), this.data));
     }
 
     question(msg = '') {
         return new Promise(resolve => this.terminal.question(msg, resolve));
     }
+
     closeTerminal() {
         this.terminal.close();
     }
