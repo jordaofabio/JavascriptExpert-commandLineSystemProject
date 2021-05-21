@@ -19,9 +19,7 @@ async function mainLoop() {
         }
 
         const person = Person.generateInstanceFromString(answer);
-        // console.log('person', person.formatted('pt-BR'));
-        // 2 Bike,Aviao,Navio 20000000 2000-01-01 2002-02-01
-        terminalController.updateTable(person.formatted('pt-BR'))
+        console.log('person', person.formatted('pt-BR'));
         return mainLoop();
 
     } catch (error) {
