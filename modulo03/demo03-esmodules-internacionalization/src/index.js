@@ -1,6 +1,8 @@
 import database from '../database.json';
 import TerminalController from './terminalController.js';
 import Person from './person.js';
+import { save } from './repository.js';
+
 const DEFAULT_LANG = 'pt-BR';
 const STOP_TERMINAL = ':q';
 
@@ -22,6 +24,7 @@ async function mainLoop() {
         // console.log('person', person.formatted('pt-BR'));
         // 2 Bike,Aviao,Navio 20000000 2000-01-01 2002-02-01
         terminalController.updateTable(person.formatted('pt-BR'))
+        await save(person);
         return mainLoop();
 
     } catch (error) {
