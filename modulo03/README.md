@@ -9,3 +9,6 @@ Na parte 02 o usuário consegue ver, em formato de tabela, uma linha de dados sa
 
 ## Demo03 - Projeto de um programa de linha de comando
 Nesta parte o programa é finalizado - o que o usuário digita no terminal é registrado no arquivo json e exibido no próprio terminal.
+
+## Desafio - Fazer os testes
+Fazer os testes para cobrir todas as classes
