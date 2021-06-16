@@ -7,11 +7,12 @@ import TerminalController from './../src/terminalController.js';
 import mockData from './mocks/data.js';
 import chalkTable from 'chalk-table';
 import data from './mocks/data.js';
+import itemZero from './mocks/itemIndexZero.js';
 
 const mocks = {
     mockData,
-    DEFAULT_LANG: 'pt-BR'
-
+    DEFAULT_LANG: 'pt-BR',
+    itemZero 
 };
 
 
@@ -39,7 +40,16 @@ describe.only('TerminalController Suite Tests', () => {
         expect(result).to.be.equal(expected)
     });
 
-    it('Ao chamar o initializeTerminal', () => {
+    it('buildLines must return a formated data', () => {
+        const result = buildLines(mocks.itemZero, mocks.DEFAULT_LANG);
+        const expected = mocks.mockData[0];
+
+        expect(result).to.be.equal(expected);
+    });
+
+    
+
+    it('initializeTerminal', () => {
         
     });
 
